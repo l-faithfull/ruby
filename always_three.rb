@@ -1,10 +1,15 @@
-# Ask user for a number
-puts "Give me a number"
+# Declares always three method
+def always_three
 
-# Gets user's number & converts to integer
-number = gets.to_i 
+    # asks user for number
+    puts "Give me a number" 
+    
+    # gets number, converts to integer & sets to variable
+    number = gets.to_i 
 
-# Maths + shows final number back to user
-puts "Always " + (((number + 5) * 2 - 4) / 2 - number).to_s
+    # applies math and returns number to user
+    puts "Always " + (((number + 5) * 2 - 4) / 2 - number).to_s
+end    # always three method ends
 
-
+# Calls always three
+always_three
