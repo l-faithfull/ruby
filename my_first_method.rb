@@ -7,9 +7,12 @@ end
 my_first_method
 
 # declares my maths method
-def my_maths_method
-    puts 2 + 2
+def my_maths_method(num1, num2)
+    number = num1 + num2
+    puts number
 end
 
-# calls two plus two
-my_maths_method
+# calls my maths method
+my_maths_method(2, 2)
+my_maths_method(5, 3)
+my_maths_method(107, 258)
