@@ -1,7 +1,7 @@
-# route object declared
+# route class declared
 class Route
 
-    # sets & gets sport
+    # sets & gets route
     def set_name=(route_name)
         @name = route_name
     end
@@ -39,28 +39,53 @@ class Route
 
 end # Route class ends
 
-# creates local_run class
-local_run = Route.new
-local_run.set_name = "Allemuir"
-route_name = local_run.get_name
-local_run.set_sport = "Running"
-sport = local_run.get_sport
-local_run.set_terrain = "sheep trod trails"
-terrain = local_run.get_terrain
-local_run.set_gradient = "steep sections"
-gradient = local_run.get_gradient
 
-puts "#{sport} #{route_name} has #{gradient} on #{terrain}."
+# Running (descendant) class declared
+class Running < Route
+
+    def muddy
+        return "squelch"
+    end
+
+end # Running class ends
+
+
+# Cycling (descendant) class declared
+class Cycling < Route
+
+    def speedy
+        return "whooooosh!"
+    end
+
+end # Cycling class ends
+
+
+# creates local class
+local = Running.new
+local.set_name = "Allemuir"
+run_route = local.get_name
+local.set_sport = "Running"
+run_sport = local.get_sport
+local.set_terrain = "sheep trod trails"
+run_terrain = local.get_terrain
+local.set_gradient = "steep sections"
+run_gradient = local.get_gradient
+
 
 # creates classic_climb class
-classic_climb = Route.new
+classic_climb = Cycling.new
 classic_climb.set_name = "Tourmalet"
-route_name = classic_climb.get_name
+cycle_route = classic_climb.get_name
 classic_climb.set_sport = "Cycling"
-sport = classic_climb.get_sport
+cycle_sport = classic_climb.get_sport
 classic_climb.set_terrain = "the road"
-terrain = classic_climb.get_terrain
+cycle_terrain = classic_climb.get_terrain
 classic_climb.set_gradient = "an average gradient of 7.4%"
-gradient = classic_climb.get_gradient
+cycle_gradient = classic_climb.get_gradient
 
-puts "#{sport} #{route_name} has #{gradient} on #{terrain}."
+puts "#{run_sport} #{run_route} has #{run_gradient} on #{run_terrain}, #{local.muddy},
+#{cycle_sport} #{cycle_route} has #{cycle_gradient} on #{cycle_terrain}, #{classic_climb.speedy}"
+
+# inspect classes
+puts local.inspect
+puts classic_climb.inspect
